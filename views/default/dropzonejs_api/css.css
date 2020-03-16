@@ -1,0 +1,31 @@
+/**
+ * Elgg Entities Gallery
+ * @package egallery 
+ */
+
+
+.dropzone {
+    min-height: 140px!important;
+    border: 2px dashed rgba(0,0,0,.3)!important;
+    padding: 5px 20px!important;
+}
+
+.dz-message .elgg-icon {
+    font-size: 50px;
+    color: #ddd;
+}
+
+.dz-message p {
+    color: #ddd;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dz-message .note {
+    color: #ddd;
+    font-size: 16px;
+}
+
+#dropzone_upload {
+    cursor: pointer;
+}
