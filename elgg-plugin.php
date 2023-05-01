@@ -4,7 +4,15 @@
  * @package dropzonejs_api
  */
 
+use DropzonejsApi\Elgg\Bootstrap;
+
 return [
+    'plugin' => [
+        'name' => 'DropzoneJS API',
+		'version' => '4.1',
+		'dependencies' => [],
+	],	
+    'bootstrap' => Bootstrap::class,
     'actions' => [
         'dropzonejs_api/upload' => [],
     ],

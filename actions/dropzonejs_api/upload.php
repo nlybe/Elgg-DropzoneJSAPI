@@ -4,6 +4,8 @@
  * @package dropzonejs_api
  */
 
+use DropzonejsApi\DropzoneJSOptions;
+
 $result = DropzoneJSOptions::handleUploads();
 
 if (elgg_is_xhr()) {

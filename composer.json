@@ -1,12 +1,11 @@
 {
     "name": "nlybe/dropzonejs_api",
-    "description": "FusionCharts integration on Elgg",
+    "description": "DropzoneJS integration on Elgg",
     "type": "elgg-plugin",
     "keywords": [
         "elgg",
         "plugin",
-        "charts",
-        "FusionCharts"
+        "dropzone"
     ],
     "homepage": "https://github.com/nlybe/elgg-dropzonejs",
     "license": "GPL-2.0",
@@ -22,5 +21,8 @@
     },        
     "extra": {
         "installer-name": "dropzonejs_api"
-    }
+    },
+	"conflict": {
+		"elgg/elgg": "<4.3"
+	}
 }
