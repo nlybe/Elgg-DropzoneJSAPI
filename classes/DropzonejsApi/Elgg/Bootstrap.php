@@ -26,9 +26,6 @@ class Bootstrap extends DefaultPluginBootstrap {
 	 */
 	protected function initViews() {
 
-		// register extra css
-		elgg_extend_view('elgg.css', 'dropzonejs_api/css.css');
-
 		// dropzone.js library, use with "require('dropzonejs_api');"
 		elgg_define_js('dropzonejs_api', [
 			'deps' => [],

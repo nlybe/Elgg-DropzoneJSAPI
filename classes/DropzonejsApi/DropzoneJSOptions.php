@@ -48,7 +48,7 @@ class DropzoneJSOptions {
 			$success = true;
 			if ($upload->error) {
 				$messages[] = $upload->error;
-				$success = false;$
+				$success = false;
 				$guid = false;
 			} 
 			else {
@@ -174,10 +174,6 @@ class DropzoneJSOptions {
 				// remove old file
 				unlink($old_filestorename);
 			}
-			// $mime_type = $file->detectMimeType(null, $upload->getClientMimeType());
-			// $mime_type = elgg()->mimetype->getMimeType($upload->getPathname());
-			// $file->setMimeType($mime_type);
-			// $file->simpletype = elgg_get_file_simple_type($mime_type);
 			_elgg_services()->events->triggerAfter('upload', 'file', $file);
 
 			if (!$file->save() || !$file->exists()) {
