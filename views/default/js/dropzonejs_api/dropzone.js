@@ -2,13 +2,14 @@ define(function (require) {
 
     var elgg = require("elgg");
     var $ = require('jquery');
+    var security = require('elgg/security');
     require('dropzonejs_api');
 
     Dropzone.autoDiscover = false;
     $(function() {
         var subtype = $('#subtype').val();
         var container_guid = $('#container_guid').val();
-        var action_url = elgg.security.addToken(elgg.normalize_url("action/dropzonejs_api/upload?subtype="+subtype+"&container_guid="+container_guid));
+        var action_url = security.addToken(elgg.normalize_url("action/dropzonejs_api/upload?subtype="+subtype+"&container_guid="+container_guid));
         
         $("#dropzone_upload").dropzone({
             maxFiles: 2000,

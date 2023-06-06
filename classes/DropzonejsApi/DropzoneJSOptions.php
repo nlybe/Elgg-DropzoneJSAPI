@@ -62,7 +62,7 @@ class DropzoneJSOptions {
 				'guid' => $guid,
 			];
 			
-			$output[] = elgg_trigger_plugin_hook('upload:after', 'dropzonejs_api', [
+			$output[] = elgg_trigger_event_results('upload:after', 'dropzonejs_api', [
 				'upload' => $upload,
 			], $file_output);
 		}
@@ -152,7 +152,7 @@ class DropzoneJSOptions {
 				'upload' => $upload,
 			];
 
-			$uploaded = _elgg_services()->hooks->trigger('upload', 'file', $hook_params);
+			$uploaded = elgg_trigger_event_results('upload', 'file', $hook_params);
 			if ($uploaded !== true && $uploaded !== false) {
 				$filestorename = $file->getFilenameOnFilestore();
 				try {
