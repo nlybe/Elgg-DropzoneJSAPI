@@ -1,5 +1,10 @@
 # Change Log
 
+## 5.4 (May 2024)
+
+- Added error message when upload fails
+- Minor code improvements
+
 ## 5.3 (June 2023)
 
 - Upgraded for Elgg 5.x compatibility

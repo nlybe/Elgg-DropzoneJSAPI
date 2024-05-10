@@ -9,7 +9,7 @@ use DropzonejsApi\Elgg\Bootstrap;
 return [
     'plugin' => [
         'name' => 'DropzoneJS API',
-		'version' => '5.3',
+		'version' => '5.4',
 		'dependencies' => [],
 	],	
     'bootstrap' => Bootstrap::class,

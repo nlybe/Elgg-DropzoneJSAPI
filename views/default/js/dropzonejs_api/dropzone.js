@@ -1,10 +1,4 @@
-define(function (require) {
-
-    var elgg = require("elgg");
-    var $ = require('jquery');
-    var security = require('elgg/security');
-    require('dropzonejs_api');
-
+define(['jquery', 'elgg', 'elgg/i18n', 'elgg/system_messages', 'elgg/security', 'dropzonejs_api'], function ($, elgg, i18n, system_messages, security) {
     Dropzone.autoDiscover = false;
     $(function() {
         var subtype = $('#subtype').val();
@@ -33,6 +27,30 @@ define(function (require) {
                     $(preview).addClass('elgg-dropzone-error').removeClass('elgg-dropzone-success');
                     $(preview).find('.elgg-dropzone-messages').html(elgg.echo('dropzone:server_side_error'));
                 }
+            },
+            error: function error(file, message) {
+              if (file.previewElement) {
+                system_messages.error(i18n.echo('dropzonejs_api:upload:error'));  
+                file.previewElement.classList.add("dz-error");
+          
+                if (typeof message !== "string" && message.error) {
+                  message = message.error;
+                }
+          
+                var _iterator6 = options_createForOfIteratorHelper(file.previewElement.querySelectorAll("[data-dz-errormessage]"), true),
+                    _step6;
+          
+                try {
+                  for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+                    var node = _step6.value;
+                    node.textContent = message;
+                  }
+                } catch (err) {
+                  _iterator6.e(err);
+                } finally {
+                  _iterator6.f();
+                }
+              }
             },
         });
     })
